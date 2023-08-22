@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg p-0 d-flex">
+            <div class="container-fluid">
+                <img class="logo" src="./images/favicon.png" alt="logoAmazingEvents">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="./UpcomingEvents.html">Upcoming Events</a>
+                        <a class="nav-link" href="./PastEvents.html">Past Events</a>
+                        <a class="nav-link" href="./Contact.html">Contact</a>
+                        <a class="nav-link" href="./Stats.html">Stats</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active ">
+                    <img src="./images/optional_banner_4.jpg" class="d-block w-100 carouselImg" alt="imageluces">
+                    <div class="carousel-caption mb-5 d-block">
+                        <h5 class="carouseltext">Events</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/food_fair.jpg" class="d-block w-100 carouselImg" alt="imagefood">
+                    <div class="carousel-caption mb-5 d-block">
+                        <h5 class="carouseltext">Events</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/marathon2.jpg" class="d-block w-100 carouselImg" alt="imagemarathon">
+                    <div class="carousel-caption mb-5 d-block">
+                        <h5 class="carouseltext">Events</h5>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </header>
+    <main>
+        <div class="row justify-content-between p-lg-2 w-100">
+            <div class="filtros d-flex  w-50 p-3 justify-content-lg-evenly flex-wrap">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Food Fair</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Costume Party</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Music Concert</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">Museum</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">Race</label>
+                </div>
+            </div>
+            <div class="d-flex h-25 w-25 p-2 justify-content-end">
+                <input type="text" class="form-control" placeholder="Search" aria-label="Input group example"
+                    aria-describedby="btnGroupAddon2">
+                <div class="input-group-text" id="btnGroupAddon2"><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                        height="10" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg></div>
+            </div>
+        </div>
+        <div class="contenedorTarjetas row conteiner justify-content-evenly w-100">
+            <div class="card" style="width: 19rem">
+                <img src="./images/costume_party.jpg" class="card-img-top" alt="image party">
+                <div class="card-body row">
+                    <h5 class="card-title">Costume Party</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <p>Price</p>
+                        <a href="./Details.html" class="btn btn-primary w-50 ">Details</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card" style="width: 19rem;">
+                <img src="./images/optional_banner_5.jpg" class="card-img-top" alt="image concerts">
+                <div class="card-body">
+                    <h5 class="card-title">Concerts</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <p>Price</p>
+                        <a href="./Details.html" class="btn btn-primary w-50 ">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 19rem;">
+                <img src="./images/outing_to_the_museum.jpg" class="card-img-top" alt="image museum">
+                <div class="card-body">
+                    <h5 class="card-title">Museum</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <p>Price</p>
+                        <a href="./Details.html" class="btn btn-primary w-50 ">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 19rem;">
+                <img src="./images/optional_banner_1.jpg" class="card-img-top" alt="image food">
+                <div class="card-body">
+                    <h5 class="card-title">Food Fair</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <p>Price</p>
+                        <a href="./Details.html" class="btn btn-primary w-50 ">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="d-flex justify-content-start align-items-center mt-3 p-md-2 ">
+
+        <a href="www.whatsapp.com"> <img src="./images/whatsapp.png" alt="logowhatsapp" class="socialMedia"> </a>
+        <a href="www.facebook.com"> <img src="./images/facebook.png" alt="logofacebook" class="socialMedia"></a>
+        <a href="www.instagram.com"> <img src="./images/instagram.png" alt="logoinstagram" class="socialMedia"></a>
+        <h3 class="position-absolute">COHORT</h3>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

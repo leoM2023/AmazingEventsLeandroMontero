@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg p-0 d-flex">
+            <div class="container-fluid">
+                <img class="logo" src="./images/favicon.png" alt="logoAmazingEvents">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="./Home.html">Home</a>
+                        <a class="nav-link" href="./UpcomingEvents.html">Upcoming Events</a>
+                        <a class="nav-link" href="./PastEvents.html">Past Events</a>
+                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="./Stats.html">Stats</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="./images/phone4.jpg" class="d-block w-100 carouselImg" alt="image luces">
+                    <div class="carousel-caption mb-5 d-block">
+                        <h5 class="carouseltext">Phone</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/email2.jpg" class="d-block w-100 carouselImg" alt="image food">
+                    <div class="carousel-caption mb-5 d-block">
+                        <h5 class="carouseltext">Email</h5>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img src="./images/contact6.jpg" class="d-block w-100 carouselImg" alt="image contact">
+                    <div class="carousel-caption mb-5 d-block">
+                        <h5 class="carouseltext">Contact</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </header>
+    <main>
+        <div class="container mt-4 w-50 bg-light">
+            <form class=" row d-flex justify-content-end">
+                <div class="form">
+                    <label for="nombre">Name:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form">
+                    <label for="mensaje">Message:</label>
+                    <textarea class="form-control" id="mensaje" rows="6"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary m-2 w-auto">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="d-flex justify-content-start align-items-center mt-3 p-md-2 ">
+        <a href="www.whatsapp.com"> <img src="./images/whatsapp.png" alt="logowhatsapp" class="socialMedia"> </a>
+        <a href="www.facebook.com"> <img src="./images/facebook.png" alt="logofacebook" class="socialMedia"></a>
+        <a href="www.instagram.com"> <img src="./images/instagram.png" alt="logoinstagram" class="socialMedia"></a>
+        <h3 class="position-absolute">COHORT</h3>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
