@@ -1,4 +1,4 @@
-/* *{
+ /* *{
     outline: 1px solid red;
 } */
 h5 {
@@ -161,9 +161,9 @@ h3 {
 }
 
 .carouselImg {
-    height: 30vh;
     object-fit: cover;
     object-position: center center;
+    height: 250px;
 }
 
 
@@ -221,4 +221,7 @@ td {
 }
 .btn {
     height: 40px;
+}
+.mainDetails{
+    min-height: 83vh;
 }
