@@ -63,8 +63,9 @@ h3 {
     transform: scale(1);
     transition-delay: 0.5s;
     box-shadow: 0 0 10px var(--color),
-        0 0 30px var(--color),
-        0 0 60px var(--color);
+                0 0 30px var(--color),
+                0 0 60px var(--color);
+    
 }
 
 .nav-link span {
@@ -150,7 +151,7 @@ h3 {
 
 .logo {
     margin: 10px;
-    width: 30px;
+    width:fit-content;
     height: 50px;
 }
 
@@ -197,8 +198,8 @@ footer {
 
 tr,
 td {
-    height: 2rem;
-    justify-content: center;
+    height: 2rem;    
+    
 }
 
 table,
@@ -207,6 +208,8 @@ th,
 td {
     border: 1px solid black;
     border-collapse: collapse;
+    text-align: center;
+    
 }
 .card {
     padding: 0px;
@@ -221,7 +224,19 @@ td {
 }
 .btn {
     height: 40px;
+    
 }
 .mainDetails{
     min-height: 83vh;
+}
+
+.subt{
+    font-weight:600 ;
+}
+.mainDetails {
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

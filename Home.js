@@ -104,7 +104,8 @@ inputTexto.addEventListener("input", () => {
     }
     let eventosFiltradosPorNombreYCategorias = filtrarPorNombre(eventosAMostrar, inputTexto.value)
     if (eventosFiltradosPorNombreYCategorias.length == 0) {
-        contenedorDeTarjetas.innerHTML = "NO ENCONTRADO"
+        contenedorDeTarjetas.innerHTML = "NOT FOUND"
+    } else {
         contenedorDeTarjetas.innerHTML = generarContenidoHome(eventosFiltradosPorNombreYCategorias)
     }
 
