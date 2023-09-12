@@ -2,6 +2,22 @@ const queryString = location.search
 const params = new URLSearchParams(queryString)
 const id = params.get("id")
 
+let urlData = 'https://mindhub-xj03.onrender.com/api/amazing'
+
+
+async function traerDataEventos() {
+    let todosLosEventos;
+    let eventosJson;
+    try {
+        todosLosEventos = await fetch(urlData);
+        eventosJson = await todosLosEventos.json();
+        return eventosJson;
+    }
+    catch (error) {
+        console.log("Error 1")
+    }
+}
+
 
 function pintarDetails(evento) {
     let container = document.querySelector(".mainDetails");
@@ -42,4 +58,4 @@ function buscarEvento(id) {
     return data.events.find(elemento => elemento._id == id);
 }
 
-pintarDetails(buscarEvento(id))
+traerDataEventos().then((datos)=> {data = datos; pintarDetails(buscarEvento(id))});

@@ -1,4 +1,52 @@
-let contenedorDeTarjetas = document.querySelector(".contenedorTarjetas");
+let urlData = 'https://mindhub-xj03.onrender.com/api/amazing'
+
+async function traerDataEventos() {
+    let todosLosEventos;
+    let eventosJson;
+    try {
+        todosLosEventos = await fetch(urlData);
+        eventosJson = await todosLosEventos.json();
+        return eventosJson;
+    }
+    catch (error) {
+        console.log("Error 1")
+    }
+}
+
+const panelDeFiltros = document.querySelector(".panelFiltros")
+const inputTexto = document.querySelector("#texto");
+const contenedorDeTarjetas = document.querySelector(".contenedorTarjetas");
+let arregloDeCheckBox=""
+
+traerDataEventos().then((datos) => {
+    data = datos;
+    inyectarContenido(data.events, (contenedorDeTarjetas))
+    panelDeFiltros.innerHTML = crearFiltros(listarCategoriasDisponibles(data.events));
+    arregloDeCheckBox = document.querySelectorAll(".form-check-input");
+
+});
+
+panelDeFiltros.addEventListener("change", () => {refrescarContenido(contenedorDeTarjetas) })
+
+inputTexto.addEventListener("input", () => {
+    let categoriasSeleccionadas = obtenerCategoriasSeleccionadas()
+    let eventosAMostrar = []
+    if (categoriasSeleccionadas.length == 0) {
+        eventosAMostrar = data.events
+    }
+    else {
+        eventosAMostrar = obtenerEventosPorCategoriasSeleccionadas(categoriasSeleccionadas, data.events)
+    }
+    let eventosFiltradosPorNombreYCategorias = filtrarPorNombre(eventosAMostrar, inputTexto.value)
+    if (eventosFiltradosPorNombreYCategorias.length == 0) {
+        contenedorDeTarjetas.innerHTML = "NOT FOUND"
+    } else {
+        contenedorDeTarjetas.innerHTML = generarContenidoHome(eventosFiltradosPorNombreYCategorias)
+    }
+
+})
+
+
 
 function crearTarjeta(evento) {
     return `<div class="card">
@@ -28,13 +76,6 @@ function inyectarContenido(que, donde) {
     donde.innerHTML = generarContenidoHome(que)
 }
 
-inyectarContenido(data.events, contenedorDeTarjetas)
-
-const panelDeFiltros = document.querySelector(".panelFiltros")
-panelDeFiltros.innerHTML = crearFiltros(listarCategoriasDisponibles(data.events))
-const arregloDeCheckBox = document.querySelectorAll(".form-check-input")
-panelDeFiltros.addEventListener("change", () => { refrescarContenido(contenedorDeTarjetas) })
-
 
 function obtenerCategoriasSeleccionadas() {
     let arregloDeCategoriasSeleccionadas = []
@@ -44,6 +85,7 @@ function obtenerCategoriasSeleccionadas() {
     }
     return arregloDeCategoriasSeleccionadas
 }
+
 
 function obtenerEventosPorCategoriasSeleccionadas(categorias, eventos) {
     let arregloDeEventosFiltrados = []
@@ -55,7 +97,7 @@ function obtenerEventosPorCategoriasSeleccionadas(categorias, eventos) {
 }
 
 function refrescarContenido(contenedorDeTarjetas) {
-    let categorias = obtenerCategoriasSeleccionadas()
+    let categorias = obtenerCategoriasSeleccionadas();
     let listaEventos = []
     if (categorias.length == 0)
         listaEventos = data.events
@@ -75,16 +117,13 @@ function crearFiltros(arregloDeCategorias) {
     let filtrosHtml = ""
     for (elemento of arregloDeCategorias) {
         filtrosHtml += ` <div class="form-check w-auto col-lg-2 flex-grow-0  flex-wrap">
-<input class="form-check-input" type="checkbox" id= ${elemento.trim} value= ${elemento}>
-<label class="form-check-label" for=${elemento.trim}> ${elemento}</label>
+<input class="form-check-input" type="checkbox" id= ${elemento} value= ${elemento}>
+<label class="form-check-label" for=${elemento}> ${elemento}</label>
 </div>`
     }
     return filtrosHtml;
-
 }
 
-
-const inputTexto = document.querySelector("#texto");
 
 function filtrarPorNombre(arregloDeEventos, texto) {
     let resultadoFiltrado = arregloDeEventos.filter(evento =>
@@ -92,21 +131,3 @@ function filtrarPorNombre(arregloDeEventos, texto) {
     return resultadoFiltrado
 }
 
-
-inputTexto.addEventListener("input", () => {
-    let categoriasSeleccionadas = obtenerCategoriasSeleccionadas()
-    let eventosAMostrar = []
-    if (categoriasSeleccionadas.length == 0) {
-        eventosAMostrar = data.events
-    }
-    else {
-        eventosAMostrar = obtenerEventosPorCategoriasSeleccionadas(categoriasSeleccionadas, data.events)
-    }
-    let eventosFiltradosPorNombreYCategorias = filtrarPorNombre(eventosAMostrar, inputTexto.value)
-    if (eventosFiltradosPorNombreYCategorias.length == 0) {
-        contenedorDeTarjetas.innerHTML = "NOT FOUND"
-    } else {
-        contenedorDeTarjetas.innerHTML = generarContenidoHome(eventosFiltradosPorNombreYCategorias)
-    }
-
-})

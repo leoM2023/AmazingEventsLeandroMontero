@@ -1,4 +1,32 @@
-let contenedorDeTarjetas = document.querySelector(".contenedorTarjetas");
+let urlData = 'https://mindhub-xj03.onrender.com/api/amazing'
+
+async function traerDataEventos() {
+    let todosLosEventos;
+    let eventosJson;
+    try {
+        todosLosEventos = await fetch(urlData);
+        eventosJson = await todosLosEventos.json();
+        return eventosJson;
+    }
+    catch (error) {
+        console.log("Error 1")
+    }
+}
+
+const panelDeFiltros = document.querySelector(".panelFiltros")
+const inputTexto = document.querySelector("#texto");
+const contenedorDeTarjetas = document.querySelector(".contenedorTarjetas");
+let arregloDeCheckBox=""
+
+traerDataEventos().then((datos) => {
+    data = datos;
+    panelDeFiltros.innerHTML = crearFiltros(listarCategoriasDisponibles(data.events));
+    arregloDeCheckBox = document.querySelectorAll(".form-check-input");
+    contenedorDeTarjetas.innerHTML = generarContenidoPast(data.events, data.currentDate)
+});
+
+panelDeFiltros.addEventListener("change", () => {refrescarContenido(contenedorDeTarjetas);});
+
 
 function crearTarjeta(evento) {
     return `<div class="card">
@@ -25,13 +53,6 @@ function generarContenidoPast(arregloEventos, fechaActual) {
     return listaDeTarjetas
 }
 
-contenedorDeTarjetas.innerHTML = generarContenidoPast(data.events, data.currentDate)
-
-const panelDeFiltros = document.querySelector(".panelFiltros")
-panelDeFiltros.innerHTML = crearFiltros(listarCategoriasDisponibles(data.events))
-panelDeFiltros.addEventListener("change", () => {
-    refrescarContenido(contenedorDeTarjetas);
-});
 
 function obtenerCategoriasSeleccionadas() {
     const arregloDeCheckBox = document.querySelectorAll(".form-check-input")
@@ -79,8 +100,6 @@ function crearFiltros(arregloDeCategorias) {
     }
     return filtrosHtml;
 }
-
-const inputTexto = document.querySelector("#texto");
 
 function filtrarPorNombre(arregloDeEventos, texto) {
     let resultadoFiltrado = arregloDeEventos.filter((evento) =>
